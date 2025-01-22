@@ -1,0 +1,21 @@
+export const words = [
+'M',
+'Modern Serenity',
+'N',
+'Nordic Elegence',
+'P',
+'Pure Aura',
+'R',
+'Retro Vibe',
+'Reflective Haven',
+'S',
+'Serene Seat',
+'Sleek Living' ,
+'Sunny Chic',
+'T',
+'The Lucky Lamp',
+'Timeless Elegance',
+'Tropical Vibe',
+'Z',
+'Zen Table'
+]
