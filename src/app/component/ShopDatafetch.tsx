@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 type Product = {
@@ -48,7 +48,6 @@ const ShopCardText = () => {
     fetchProducts();
   }, []);
 
-  const notify = () => toast("Item added to cart! ✅");
 
   return (
     <div className="lg:mt-[40px] w-full rounded-[5px] border bg-white max-sm:mt-[-100px]">

@@ -2,14 +2,20 @@
 
 import React, { useState, ChangeEvent } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
-import Link from 'next/link'; // Next.js ka Link component import karein
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
+// Define the Product type
+interface Product {
+  _id: string;
+  title: string;
+  price: number;
+  imageUrl: string;
+}
+
 const Searchbar: React.FC = () => {
-  const [activeSearch, setActiveSearch] = useState<string[]>([]);
   const [query, setQuery] = useState<string>(''); // Search box ka text
-  const [searchResults, setSearchResults] = useState<any[]>([]); // To store search results
+  const [searchResults, setSearchResults] = useState<Product[]>([]); // To store search results with Product type
   const router = useRouter();
 
   // Fetch products based on the search query
@@ -25,8 +31,8 @@ const Searchbar: React.FC = () => {
       const url = `https://o22mqdox.api.sanity.io/v1/data/query/production?query=${encodeURIComponent(groqQuery)}`;
       const response = await axios.get(url);
 
-      // Store the search results in state
-      setSearchResults(response.data.result);
+      // Store the search results in state with proper type
+      setSearchResults(response.data.result as Product[]);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
@@ -38,7 +44,6 @@ const Searchbar: React.FC = () => {
     setQuery(value);
 
     if (value === '') {
-      setActiveSearch([]); // Clear suggestions if input is empty
       setSearchResults([]); // Clear search results
       return;
     }
@@ -47,9 +52,8 @@ const Searchbar: React.FC = () => {
   };
 
   // Handle suggestion click
-  const handleSuggestionClick = (product: any) => {
+  const handleSuggestionClick = (product: Product) => {
     setQuery(product.title);
-    setActiveSearch([]);
     setSearchResults([]); // Clear search results
     router.push(`/product/${product._id}`); // Redirect to product detail page using product ID
   };

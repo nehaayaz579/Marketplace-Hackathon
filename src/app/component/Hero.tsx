@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { FaCircle } from "react-icons/fa";
 import { LuAlarmClock } from "react-icons/lu";
 import { BiSolidCommentDetail } from "react-icons/bi";
 import Datafetch from "./Datafetch";

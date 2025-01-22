@@ -1,4 +1,3 @@
-import { FaCircle } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import Topheader2 from "../component/Topheader2";

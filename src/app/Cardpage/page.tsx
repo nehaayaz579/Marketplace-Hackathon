@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
@@ -38,9 +39,7 @@ export default function Cart() {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  const handleCheckout = () => {
-    window.location.href = "/checkout";
-  };
+ 
 
   const handleContinueShopping = () => {
     window.location.href = "/";
@@ -72,7 +71,7 @@ export default function Cart() {
         <div className="bg-white rounded-lg shadow-sm text-center py-16">
           <ShoppingBag className="h-16 w-16 mx-auto text-gray-400 mb-4" />
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Your cart is empty</h2>
-          <p className="text-gray-500 mb-6">Looks like you haven't added anything to your cart yet</p>
+          <p className="text-gray-500 mb-6">Looks like you havent added anything to your cart yet</p>
           <button
             onClick={handleContinueShopping}
             className="inline-flex items-center gap-2 px-6 py-3 text-white bg-[#2DC071]  hover:bg-[#2d925c]  rounded-lg transition duration-200"
@@ -89,10 +88,11 @@ export default function Cart() {
                 <div key={item._id} className="bg-white rounded-lg shadow-sm p-4 hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-start gap-4">
                     <div className="relative w-24 h-24 flex-shrink-0">
-                      <img
+                      <Image
                         src={item.imageUrl || "/api/placeholder/96/96"}
                         alt={item.title}
                         className="w-full h-full object-cover rounded-lg"
+                      
                       />
                     </div>
                     <div className="flex-grow">

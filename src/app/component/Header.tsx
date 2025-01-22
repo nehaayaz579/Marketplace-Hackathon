@@ -1,10 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Link from "next/link";
 import { IoPersonOutline, IoSearch } from "react-icons/io5";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { CiHeart } from "react-icons/ci";
-import { useRouter } from "next/router";
 import Searchbar from "./Searchbar";
 
 const Header = () => {

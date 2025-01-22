@@ -1,7 +1,7 @@
 "use client"; // Mark this file as a Client Component
 
 import React, { useState, useEffect } from "react";
-import { CreditCard, Truck, Package, CheckCircle, ArrowLeft } from "lucide-react";
+import { CreditCard, Truck, CheckCircle, ArrowLeft } from "lucide-react";
 
 type CartItem = {
   _id: string;
@@ -250,7 +250,7 @@ export default function Checkout() {
       </div>
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Order Confirmed!</h2>
       <p className="text-gray-600 mb-6">
-        Thank you for your order. We'll send you a confirmation email shortly.
+        Thank you for your order. Well send you a confirmation email shortly.
       </p>
       <button
         onClick={() => window.location.href = '/'}
