@@ -47,16 +47,16 @@ const Hero = () => {
           <Image
             src="/images/h3.png"
             alt="Image 3"
-            width={200}
+            width={300}
             height={350}
-            className="lg:w-full sm:w-200"
+            className="lg:w-full sm:w-300"
           />
           <Image
             src="/images/h4.png"
             alt="Image 4"
-            width={200}
+            width={300}
             height={350}
-            className="w-full sm:w-150"
+            className="w-full sm:w-300"
           />
         </div>
       </div>
@@ -175,13 +175,13 @@ const Hero = () => {
         <div className="container px-5  py-20 mx-auto">
           <div className="flex flex-wrap -m-4 justify-center">
             <div className="p-4 w-[350px] hover:scale-105 active:scale-10 transition-all">
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg ">
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
-                  src="/images/herocard1.png"
+                  src="/images/lastherocard1.png"
                   alt="blog"
-                  width={64}
-                  height={96}
+                  width={150}
+                  height={220}
                 />
                 <div className="p-6">
                   <div className="flex gap-3">
@@ -238,10 +238,10 @@ const Hero = () => {
               <div className="h-full  border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <Image
                   className="lg:h-48  md:h-36 w-full object-cover object-center"
-                  src="/images/herocard2.png"
+                  src="/images/lastherocard2.png"
                   alt="blog"
-                  width={64}
-                  height={96}
+                  width={150}
+                  height={220}
                 />
                 <div className="p-6">
                   <div className="flex gap-3">
@@ -298,10 +298,10 @@ const Hero = () => {
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
-                  src="/images/herocard3.png"
+                  src="/images/lastherocard3.png"
                   alt="blog"
-                  width={64}
-                  height={96}
+                  width={150}
+                  height={220}
                 />
                 <div className="p-6">
                   <div className="flex gap-3">

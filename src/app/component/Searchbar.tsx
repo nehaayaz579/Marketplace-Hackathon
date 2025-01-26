@@ -59,12 +59,12 @@ const Searchbar: React.FC = () => {
   };
 
   return (
-    <form className="w-[400px] relative bg-slate-50">
+    <form className="w-[400px] relative bg-slate-50 pl-9 pr-9">
       <div className="relative">
         <input
           type="search"
-          placeholder="Search for a product"
-          className="w-full p-2 rounded-full bg-black outline outline-2 outline-black text-white"
+          placeholder="Search"
+          className="w-full p-2 rounded-md bg-white outline outline-4 outline-blue-500 text-black"
           value={query}
           onChange={(e) => handleSearch(e)} // Fetch products on input change
         />
@@ -76,17 +76,17 @@ const Searchbar: React.FC = () => {
           onClick={() => {
             if (searchResults.length > 0) {
               // Redirect to the first product's detail page
-              router.push(`/product/${searchResults[0]._id}`);
+              router.push(`/product/_id}`);
             }
           }}
         >
-          <AiOutlineSearch className="text-white" />
+          <AiOutlineSearch className=" text-blue-500 text-[20px]" />
         </button>
       </div>
 
       {/* Show Search Results */}
       {searchResults.length > 0 && (
-        <div className="absolute top-20 p-4 bg-slate-800 text-white w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
+        <div className="absolute top-20 p-4 bg-black text-white w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
           {searchResults.map((product) => (
             <span
               key={product._id}

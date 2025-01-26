@@ -3,7 +3,7 @@ import { useState} from "react";
 import Link from "next/link";
 import { IoPersonOutline, IoSearch } from "react-icons/io5";
 import { PiShoppingCartLight } from "react-icons/pi";
-import { CiHeart } from "react-icons/ci";
+import { FaHeart } from "react-icons/fa";
 import Searchbar from "./Searchbar";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header className="w-full bg-white ">
-      <div className="flex justify-between items-center px-4 sm:px-6 lg:px-10 h-[67px]">
+      <div className="flex justify-between items-center px-4 sm:px-4 lg:px-10 h-[67px]">
         {/* Logo */}
         <div className="text-2xl font-bold text-black">
           <Link href="/">Bandage</Link>
@@ -51,14 +51,13 @@ const Header = () => {
 
           {/* Icons */}
           <div className="flex gap-3">
-            <IoSearch className="w-6 h-6 text-blue-500 hover:text-blue-700" />
-            
             {/* Cart Icon linked to Cart page */}
             <Link href="/Cardpage">
               <PiShoppingCartLight className="w-6 h-6 text-blue-500 hover:text-blue-700" />
             </Link>
-
-            <CiHeart className="w-6 h-6 text-blue-500 hover:text-blue-700" />
+            <Link href="/Wishlistcard">
+            <FaHeart className="w-6 h-6 text-blue-500 hover:text-blue-700" />
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -87,7 +86,14 @@ const Header = () => {
               <li key={index} className="hover:text-black">
                 <Link href={`/${item === "Home" ? "" : item}`}>{item}</Link>
               </li>
+              
             ))}
+            <li className="flex items-center gap-2 cursor-pointer mt-4">
+              <IoPersonOutline className="w-6 h-6 text-blue-500 hover:text-black" />
+              <Link href="/login" className="text-blue-500 font-semibold hover:text-blue-700">
+                Login / Register
+              </Link>
+            </li>
           </ul>
         </nav>
       )}

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Trash2, Plus, Minus, ShoppingBag, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 type CartItem = {
   _id: string;
@@ -60,6 +62,8 @@ export default function Cart() {
   }
 
   return (
+    <>
+    <Header/>
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex items-center gap-2 mb-8">
         <ShoppingBag className="h-6 w-6 text-green-600 " />
@@ -85,14 +89,15 @@ export default function Cart() {
           <div className="lg:col-span-2">
             <div className="space-y-4">
               {cart.map((item) => (
-                <div key={item._id} className="bg-white rounded-lg shadow-sm p-4 hover:shadow-lg transition-shadow duration-200">
+                <div key={item._id} className="bg-green-200 rounded-lg shadow-sm p-4 hover:shadow-lg transition-shadow duration-200">
                   <div className="flex items-start gap-4">
                     <div className="relative w-24 h-24 flex-shrink-0">
                       <Image
                         src={item.imageUrl || "/api/placeholder/96/96"}
                         alt={item.title}
                         className="w-full h-full object-cover rounded-lg"
-                      
+                      width={100}
+                      height={100}
                       />
                     </div>
                     <div className="flex-grow">
@@ -129,7 +134,7 @@ export default function Cart() {
               ))}
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow-sm p-6 space-y-4">
+          <div className="bg-white rounded-lg shadow-xl p-6 space-y-4">
             <div className="flex justify-between text-lg">
               <span className="font-semibold">Subtotal</span>
               <span>${subtotal.toFixed(2)}</span>
@@ -159,5 +164,7 @@ export default function Cart() {
         </div>
       )}
     </div>
+    <Footer/>
+    </>
   );
 }

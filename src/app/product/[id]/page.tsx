@@ -77,7 +77,24 @@ export default function ProductDetail() {
       alert(`${product.title} has been added to your cart`);
     }
   };
-
+  const handleAddToWishlist = () => {
+    if (product) {
+      // Add the product to the localStorage wishlist
+      const storedWishlist = localStorage.getItem("wishlist");
+      const wishlist = storedWishlist ? JSON.parse(storedWishlist) : [];
+      const existingProduct = wishlist.find((item: { _id: string }) => item._id === product._id);
+  
+      if (existingProduct) {
+        alert(`${product.title} is already in your wishlist`);
+      } else {
+        // Otherwise, add the new product to wishlist
+        wishlist.push(product);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        alert(`${product.title} has been added to your wishlist`);
+      }
+    }
+  };
+  
   return product ? (
     <div className="flex-col ">
       <Topheader2/>
@@ -175,9 +192,9 @@ export default function ProductDetail() {
           {/*choose color and size */}
           <div className="flex-col mt-4">
          <span className="mr-3 text-black">Color</span>
-            <button className="border-2 border-blue-500 rounded-full bg-blue-500 w-6 h-6 focus:outline-none" />
-            <button className="border-2 border-green-500 ml-1 bg-green-500 rounded-full w-6 h-6 focus:outline-none" />
-            <button className="border-2 border-orange-400 ml-1 bg-orange-400 rounded-full w-6 h-6 focus:outline-none" />
+            <button className="border-2 border-blue-500 hover:border-black rounded-full bg-blue-500 w-6 h-6 focus:outline-none" />
+            <button className="border-2 border-green-500 hover:border-black ml-1 bg-green-500 rounded-full w-6 h-6 focus:outline-none" />
+            <button className="border-2 border-orange-400 hover:border-black ml-1 bg-orange-400 rounded-full w-6 h-6 focus:outline-none" />
             </div>
           <div className="flex pt-4 items-center">
             <span className="mr-3 text-black">Size</span>
@@ -204,12 +221,24 @@ export default function ProductDetail() {
             </div>
           </div>
           {/* Add to Cart Button */}
+          <div className="flex gap-8">
+          <div>
           <button 
             className="mt-6 w-full lg:w-auto w-100 bg-black text-white py-2 px-6 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300"
             onClick={handleAddToCart}
           >
             Add to Cart
           </button>
+          </div>
+          <div >
+          <button 
+            className="mt-6 w-full lg:w-auto w-100 bg-black text-white py-2 px-6 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300"
+            onClick={handleAddToWishlist}
+          >
+            Add to Wishlist
+          </button>
+          </div>
+          </div>
         </div>
       </div>
       <Footer />
