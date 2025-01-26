@@ -5,7 +5,7 @@ import { BiSolidCommentDetail } from "react-icons/bi";
 import Datafetch from "./Datafetch";
 const Hero = () => {
   return (
-    <div className="max-h-full">
+    <div className="max-h-full bg-white dark:bg-white">
       {/* Hero Image Section */}
       <div className="">
         <Image

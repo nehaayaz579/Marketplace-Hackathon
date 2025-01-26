@@ -42,7 +42,7 @@ const Header = () => {
         {/* Right Side Icons */}
         <div className="flex items-center gap-4">
           {/* Login/Register */}
-          <div className="hidden md:flex items-center gap-2 cursor-pointer">
+          <div className="hidden md:flex items-center gap-1 cursor-pointer">
             <IoPersonOutline className="w-6 h-6 text-blue-500 hover:text-black" />
             <h6 className="text-blue-500 font-semibold text-sm hover:text-blue-700">
               Login / Register

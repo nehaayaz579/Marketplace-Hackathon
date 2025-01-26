@@ -59,12 +59,12 @@ const Searchbar: React.FC = () => {
   };
 
   return (
-    <form className="w-full max-w-[380px] mx-auto relative bg-slate-50 pl-4 pr-4 rounded-md">
+    <form className="w-full max-w-[400px] mx-auto relative bg-slate-50 pl-3 pr-3">
       <div className="relative">
         <input
           type="search"
           placeholder="Search"
-          className="w-full p-3 rounded-md bg-white outline outline-4 outline-blue-500 text-black text-sm sm:text-base"
+          className="w-full p-2 rounded-md bg-white outline outline-4 outline-blue-500 text-black"
           value={query}
           onChange={(e) => handleSearch(e)} // Fetch products on input change
         />
@@ -72,11 +72,11 @@ const Searchbar: React.FC = () => {
         {/* Search Icon Button */}
         <button
           type="button"
-          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full transition-all hover:bg-blue-100"
+          className="absolute right-1 top-1/2 -translate-y-1/2 p-2 rounded-full"
           onClick={() => {
             if (searchResults.length > 0) {
               // Redirect to the first product's detail page
-              router.push(`/product/${searchResults[0]._id}`);
+              router.push(`/product/_id}`);
             }
           }}
         >
@@ -86,11 +86,11 @@ const Searchbar: React.FC = () => {
 
       {/* Show Search Results */}
       {searchResults.length > 0 && (
-        <div className="absolute top-16 sm:top-20 p-4 bg-black text-white w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
+        <div className="absolute top-20 p-4 bg-black text-white w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
           {searchResults.map((product) => (
             <span
               key={product._id}
-              className="cursor-pointer hover:bg-slate-600 p-2 text-sm sm:text-base"
+              className="cursor-pointer hover:bg-slate-600 p-2"
               onClick={() => handleSuggestionClick(product)} // Go to product detail page on click
             >
               {product.title}
