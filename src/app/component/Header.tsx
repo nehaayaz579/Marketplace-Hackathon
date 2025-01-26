@@ -1,7 +1,7 @@
 "use client";
 import { useState} from "react";
 import Link from "next/link";
-import { IoPersonOutline, IoSearch } from "react-icons/io5";
+import { IoPersonOutline} from "react-icons/io5";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { FaHeart } from "react-icons/fa";
 import Searchbar from "./Searchbar";

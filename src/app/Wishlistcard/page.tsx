@@ -61,7 +61,10 @@ export default function Wishlist() {
             Your Wish List is Empty
           </h2>
           <p className="text-gray-500 mb-6">
-            Looks like you haven't added anything to your wishlist yet
+            Looks like you havent added anything to your wishlist yet
+          </p>
+          <p className="text-gray-500 mb-6">
+            Looks like you havent added anything to your wishlist yet
           </p>
           <button
             onClick={handleContinueShopping}
