@@ -8,7 +8,7 @@ import React from "react";
 const Shop = () => {
   return (
     <>
-      <div className="container ">
+      <div className="container bg-white dark:bg-white ">
         <Topheader2 />
         <Header />
 

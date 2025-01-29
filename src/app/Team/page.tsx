@@ -10,7 +10,7 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 const Team = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-white ">
       <Header />
       <div className="items-center text-[#252B42] space-y-6 mt-10">
         <h3

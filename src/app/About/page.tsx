@@ -6,7 +6,7 @@ import Footer from "../component/Footer";
 
 const About = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white dark:bg-white ">
       <Topheader />
       <Header />
 

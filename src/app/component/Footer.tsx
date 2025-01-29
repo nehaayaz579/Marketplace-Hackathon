@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       {/* Top section with logo and social media icons */}
-      <div className="w-full h-[140px] bg-gray-100 flex justify-between items-center px-4 sm:px-8 lg:px-[200px]">
+      <div className="w-full h-[140px]  dark:bg-gray-100 bg-gray-100 flex justify-between items-center px-4 sm:px-8 lg:px-[200px]">
         <h1 className="text-[22px] font-bold text-gray-700">Bandage</h1>
         <div className="flex gap-4">
           <MdOutlineFacebook className="w-[25px] h-[25px] text-[#23A6F0]" />
@@ -126,7 +126,7 @@ const Footer = () => {
       </footer>
 
       {/* Footer bottom text */}
-      <div className="text-gray-400 bg-gray-100 w-full h-[60px] font-bold text-[14px] tracking-wider text-center py-[20px]">
+      <div className="text-gray-400 bg-gray-200 dark:bg-gray-200  w-full h-[60px] font-bold text-[14px] tracking-wider text-center py-[20px]">
         <h6>Made With Love By Finland All Right Reserved</h6>
       </div>
     </>

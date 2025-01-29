@@ -11,7 +11,7 @@ import Footer from "../component/Footer";
 
 const Price = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-white ">
       <Header/>
       <PriceSection />
       <Card />

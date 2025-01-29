@@ -6,7 +6,7 @@ import Footer from "../component/Footer";
 
 const Products = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-white ">
       <Topheader2 />
       <Header />
       <h4 className="font-bold pl-[22px] pt-[14px]">home → Products</h4>
