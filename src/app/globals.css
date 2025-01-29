@@ -3,10 +3,3 @@
 @tailwind utilities;
 
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: white; /* White background in dark mode */
-    color: black; /* Black text */
-  }
-}
-
